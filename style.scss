@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #000;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+form {
+  padding: 3rem;
+
+  #username {
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+  }
+
+  #submit {
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    margin-left: 10px;
+    background: linear-gradient(to right, red, orange);
+  }
+}
+
+#mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  #gitInfoContainer {
+    padding: 20px;
+    height: 100%;
+    width: 50%;
+    border: 2px solid red;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    #profilePicture img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+    }
+
+    #profileName {
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 10px;
+      color: yellowgreen;
+      font-size: x-large;
+    }
+    #profileURL {
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 10px;
+      color: yellowgreen;
+      font-size: large;
+    }
+
+    #followers {
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 10px;
+      color: rgb(234, 255, 47);
+      font-size: large;
+    }
+    #following {
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 10px;
+      color: rgb(234, 255, 47);
+      font-size: large;
+    }
+    #repos {
+      border: 1px solid white;
+      border-radius: 20px;
+      padding: 10px;
+      color: rgb(234, 255, 47);
+      font-size: large;
+    }
+  }
+}
