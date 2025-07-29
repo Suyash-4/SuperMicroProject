@@ -15,6 +15,8 @@ function getProfilePicture(usernameInput) {
     })
     .then((result) => {
       profilePic.src = result.avatar_url;
+      document.getElementById("gitInfoContainer").style.display = "flex";
+
     });
 }
 
@@ -62,7 +64,9 @@ function getProfileURL(usernameInput) {
 function getPublicRepos(usernameInput) {
   fetch(`https://api.github.com/users/${usernameInput.value}`)
     .then((rawResults) => rawResults.json())
-    .then((result) => profileRepos.innerHTML = "Repos: " + result.public_repos);
+    .then(
+      (result) => (profileRepos.innerHTML = "Repos: " + result.public_repos)
+    );
 }
 
 // It's best practice to listen for the 'submit' event on the form itself.

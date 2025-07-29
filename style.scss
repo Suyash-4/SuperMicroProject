@@ -1,96 +1,149 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body,
-html {
-  background-color: #000;
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+html,
+body {
+  height: 100%;
+  background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
 }
 
 form {
-  padding: 3rem;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  justify-content: center;
+}
 
-  #username {
-    padding: 15px;
-    border-radius: 25px;
-    border: none;
-  }
+#username {
+  flex-grow: 1;
+  padding: 14px 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+}
 
-  #submit {
-    padding: 10px;
-    border-radius: 25px;
-    border: none;
-    color: white;
-    margin-left: 10px;
-    background: linear-gradient(to right, red, orange);
-  }
+#username:focus {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#submit {
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: none;
+  background: rgba(0, 191, 166, 0.15);
+  color: white;
+  font-size: 1.1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 191, 166, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background: rgba(0, 191, 166, 0.25);
+  box-shadow: 0 0 20px rgba(0, 191, 166, 0.5);
 }
 
 #mainContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100%;
   width: 100%;
+}
 
-  #gitInfoContainer {
-    padding: 20px;
-    height: 100%;
-    width: 50%;
-    border: 2px solid red;
-    border-radius: 30px;
-    display: flex;
+#gitInfoContainer {
+  display: none; 
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+#profilePicture img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bfa6;
+  box-shadow: 0 0 15px rgba(0, 191, 166, 0.5);
+}
+
+#profileName,
+#followers,
+#following,
+#repos {
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 20px;
+  border-radius: 15px;
+  color: #eaeaea;
+  font-size: 1.1rem;
+}
+
+#url a {
+  display: inline-block;
+  text-decoration: none;
+  color: #00bfa6;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(0, 191, 166, 0.08);
+  transition: all 0.3s;
+}
+
+#url a:hover {
+  background: rgba(0, 191, 166, 0.2);
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  }
 
-    #profilePicture img {
-      height: 200px;
-      width: 200px;
-      border-radius: 50%;
-    }
+  #submit {
+    width: 100%;
+  }
 
-    #profileName {
-      border: 1px solid white;
-      border-radius: 20px;
-      padding: 10px;
-      color: yellowgreen;
-      font-size: x-large;
-    }
-    #profileURL {
-      border: 1px solid white;
-      border-radius: 20px;
-      padding: 10px;
-      color: yellowgreen;
-      font-size: large;
-    }
-
-    #followers {
-      border: 1px solid white;
-      border-radius: 20px;
-      padding: 10px;
-      color: rgb(234, 255, 47);
-      font-size: large;
-    }
-    #following {
-      border: 1px solid white;
-      border-radius: 20px;
-      padding: 10px;
-      color: rgb(234, 255, 47);
-      font-size: large;
-    }
-    #repos {
-      border: 1px solid white;
-      border-radius: 20px;
-      padding: 10px;
-      color: rgb(234, 255, 47);
-      font-size: large;
-    }
+  #username {
+    width: 100%;
   }
 }
